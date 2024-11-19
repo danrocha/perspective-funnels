@@ -49,22 +49,23 @@ export function FileUploader() {
     <PhoneFrame>
       <div
         {...getRootProps()}
-        className={`w-full h-full flex items-center transition-colors justify-center ${isDragActive ? "bg-indigo-500/50" : "bg-white"}`}
+        className={`w-full h-full flex items-center transition-colors justify-center ${isDragActive ? "bg-sky-500/50" : "bg-white"}`}
       >
         <input {...getInputProps()} id="file-upload" />
         {/* icon */}
-        <div className="text-center min-h-1/2 grid grid-cols-1 grid-rows-2">
+        <div className="text-center min-h-1/2 grid grid-cols-1 grid-rows-2 gap-4">
           <svg
-            className={`mx-auto size-12  ${isDragActive ? "text-white" : "text-indigo-500/50"}`}
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
             viewBox="0 0 24 24"
-            fill="currentColor"
-            aria-hidden="true"
-            data-slot="icon"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className={`mx-auto size-12 ${isDragActive ? "text-white" : "text-sky-500"}`}
           >
             <path
-              fillRule="evenodd"
-              d="M1.5 6a2.25 2.25 0 0 1 2.25-2.25h16.5A2.25 2.25 0 0 1 22.5 6v12a2.25 2.25 0 0 1-2.25 2.25H3.75A2.25 2.25 0 0 1 1.5 18V6ZM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0 0 21 18v-1.94l-2.69-2.689a1.5 1.5 0 0 0-2.12 0l-.88.879.97.97a.75.75 0 1 1-1.06 1.06l-5.16-5.159a1.5 1.5 0 0 0-2.12 0L3 16.061Zm10.125-7.81a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Z"
-              clipRule="evenodd"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z"
             />
           </svg>
           {/* input  */}
@@ -76,12 +77,17 @@ export function FileUploader() {
               <>
                 <label
                   htmlFor="file-upload"
-                  className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
+                  className="relative cursor-pointer rounded-md bg-white  text-sky-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-sky-600 focus-within:ring-offset-2 hover:text-sky-500"
                   onClick={(event) => event.stopPropagation()}
                 >
-                  <span>Upload a your funnel JSON file</span>
+                  <span className="font-semibold">
+                    Upload a your funnel JSON file
+                  </span>
+                  <br />
+                  <span className="text-gray-600">
+                    or drag and drop it here.
+                  </span>
                 </label>
-                <p className="text-gray-600">or drag and drop it here.</p>
               </>
             )}
           </div>

@@ -1,0 +1,241 @@
+{
+  "name": "Purr & Sip Cat Café",
+  "bgColor": "#FFF8F0",
+  "pages": [
+    {
+      "id": "landing_page",
+      "blocks": [
+        {
+          "id": "welcome_text",
+          "type": "text",
+          "text": "Welcome to Purr & Sip!",
+          "color": "#6B4423",
+          "align": "center"
+        },
+        {
+          "id": "hero_image",
+          "type": "image",
+          "alt": "Cozy café interior with cats",
+          "src": "https://images.unsplash.com/photo-1519052537078-e6302a4968d4"
+        },
+        {
+          "id": "tagline",
+          "type": "text",
+          "text": "Where Coffee & Kitties Create Perfect Moments",
+          "color": "#8B5E3C",
+          "align": "center"
+        },
+        {
+          "id": "intro_button",
+          "type": "button",
+          "text": "Meet Our Cats",
+          "color": "white",
+          "bgColor": "#FF9776"
+        }
+      ]
+    },
+    {
+      "id": "resident_cats",
+      "blocks": [
+        {
+          "id": "cats_header",
+          "type": "text",
+          "text": "Our Furry Friends",
+          "color": "#6B4423",
+          "align": "center"
+        },
+        {
+          "id": "cats_list",
+          "type": "list",
+          "items": [
+            {
+              "id": "cat1",
+              "title": "Luna",
+              "description": "The sophisticated lady",
+              "src": "https://img.icons8.com/cute-cat/siamese"
+            },
+            {
+              "id": "cat2",
+              "title": "Mochi",
+              "description": "The playful troublemaker",
+              "src": "https://img.icons8.com/cute-cat/tabby"
+            },
+            {
+              "id": "cat3",
+              "title": "Oliver",
+              "description": "The gentle giant",
+              "src": "https://img.icons8.com/cute-cat/maine-coon"
+            },
+            {
+              "id": "cat4",
+              "title": "Pepper",
+              "description": "The window watcher",
+              "src": "https://img.icons8.com/cute-cat/black"
+            }
+          ]
+        },
+        {
+          "id": "adoption_text",
+          "type": "text",
+          "text": "All our cats are available for adoption!",
+          "color": "#8B5E3C",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "id": "menu_page",
+      "blocks": [
+        {
+          "id": "menu_header",
+          "type": "text",
+          "text": "Purrfect Treats",
+          "color": "#6B4423",
+          "align": "center"
+        },
+        {
+          "id": "menu_image",
+          "type": "image",
+          "alt": "Cat-themed latte art",
+          "src": "https://images.unsplash.com/photo-1511920170033-f8396924c348"
+        },
+        {
+          "id": "menu_list",
+          "type": "list",
+          "items": [
+            {
+              "id": "item1",
+              "title": "Cat-puccino",
+              "description": "With cat-face latte art!",
+              "src": "https://img.icons8.com/cute/coffee"
+            },
+            {
+              "id": "item2",
+              "title": "Whisker Waffles",
+              "description": "Cat-shaped Belgian waffles",
+              "src": "https://img.icons8.com/cute/waffle"
+            },
+            {
+              "id": "item3",
+              "title": "Paw Print Cookies",
+              "description": "Fresh-baked daily",
+              "src": "https://img.icons8.com/cute/cookie"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "events_page",
+      "blocks": [
+        {
+          "id": "events_header",
+          "type": "text",
+          "text": "Special Events",
+          "color": "#6B4423",
+          "align": "center"
+        },
+        {
+          "id": "events_list",
+          "type": "list",
+          "items": [
+            {
+              "id": "event1",
+              "title": "Kitten Yoga",
+              "description": "Every Sunday morning",
+              "src": "https://img.icons8.com/cute/yoga"
+            },
+            {
+              "id": "event2",
+              "title": "Paint & Purr",
+              "description": "Art night with cats",
+              "src": "https://img.icons8.com/cute/palette"
+            },
+            {
+              "id": "event3",
+              "title": "Senior Cat Sundays",
+              "description": "Special time with our elderly cats",
+              "src": "https://img.icons8.com/cute/heart"
+            }
+          ]
+        },
+        {
+          "id": "book_button",
+          "type": "button",
+          "text": "Book an Event",
+          "color": "white",
+          "bgColor": "#FF9776"
+        }
+      ]
+    },
+    {
+      "id": "reservation_page",
+      "blocks": [
+        {
+          "id": "reservation_text",
+          "type": "text",
+          "text": "Ready to Visit?",
+          "color": "#6B4423",
+          "align": "center"
+        },
+        {
+          "id": "rules_list",
+          "type": "list",
+          "items": [
+            {
+              "id": "rule1",
+              "title": "Reservations Recommended",
+              "description": "To ensure the best experience",
+              "src": "https://img.icons8.com/cute/calendar"
+            },
+            {
+              "id": "rule2",
+              "title": "Cat Care Guidelines",
+              "description": "How to interact with our cats",
+              "src": "https://img.icons8.com/cute/info"
+            }
+          ]
+        },
+        {
+          "id": "reserve_button",
+          "type": "button",
+          "text": "Reserve Your Spot",
+          "color": "white",
+          "bgColor": "#FF9776"
+        }
+      ]
+    },
+    {
+      "id": "contact_page",
+      "blocks": [
+        {
+          "id": "contact_header",
+          "type": "text",
+          "text": "Find Your Way to Feline Fun",
+          "color": "#6B4423",
+          "align": "center"
+        },
+        {
+          "id": "storefront_image",
+          "type": "image",
+          "alt": "Café storefront with cat decorations",
+          "src": "https://images.unsplash.com/photo-1482350325005-eda5e677279b"
+        },
+        {
+          "id": "location_text",
+          "type": "text",
+          "text": "Open Daily 9am-7pm",
+          "color": "#8B5E3C",
+          "align": "center"
+        },
+        {
+          "id": "contact_button",
+          "type": "button",
+          "text": "Get Directions",
+          "color": "white",
+          "bgColor": "#FF9776"
+        }
+      ]
+    }
+  ]
+}

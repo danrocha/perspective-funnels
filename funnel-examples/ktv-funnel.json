@@ -1,0 +1,278 @@
+{
+  "name": "Golden Voice KTV",
+  "bgColor": "#1A0F2E",
+  "pages": [
+    {
+      "id": "landing_page",
+      "blocks": [
+        {
+          "id": "welcome_text",
+          "type": "text",
+          "text": "金声 Golden Voice KTV",
+          "color": "#FFD700",
+          "align": "center"
+        },
+        {
+          "id": "hero_image",
+          "type": "image",
+          "alt": "Luxurious KTV entrance",
+          "src": "https://images.unsplash.com/photo-1563699483391-c49f35c7bd8b"
+        },
+        {
+          "id": "tagline",
+          "type": "text",
+          "text": "Your Private Stage Awaits",
+          "color": "#E6B8FF",
+          "align": "center"
+        },
+        {
+          "id": "cta_button",
+          "type": "button",
+          "text": "Book Your Room",
+          "color": "white",
+          "bgColor": "#FFD700"
+        }
+      ]
+    },
+    {
+      "id": "rooms_showcase",
+      "blocks": [
+        {
+          "id": "rooms_header",
+          "type": "text",
+          "text": "Luxury Karaoke Suites",
+          "color": "#FFD700",
+          "align": "center"
+        },
+        {
+          "id": "rooms_list",
+          "type": "list",
+          "items": [
+            {
+              "id": "room1",
+              "title": "Diamond Suite",
+              "description": "For 15-20 guests • Premium sound system",
+              "src": "https://img.icons8.com/luxury/diamond"
+            },
+            {
+              "id": "room2",
+              "title": "Pearl Room",
+              "description": "For 8-12 guests • Perfect for parties",
+              "src": "https://img.icons8.com/luxury/pearl"
+            },
+            {
+              "id": "room3",
+              "title": "Jade Room",
+              "description": "For 4-6 guests • Cozy atmosphere",
+              "src": "https://img.icons8.com/luxury/jade"
+            },
+            {
+              "id": "room4",
+              "title": "Ruby Room",
+              "description": "For 6-8 guests • Romantic lighting",
+              "src": "https://img.icons8.com/luxury/ruby"
+            }
+          ]
+        },
+        {
+          "id": "room_features",
+          "type": "text",
+          "text": "All rooms feature: 4K TVs • Professional Audio • Touch-screen Song Selection • Mood Lighting",
+          "color": "#E6B8FF",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "id": "menu_page",
+      "blocks": [
+        {
+          "id": "menu_header",
+          "type": "text",
+          "text": "Food & Beverages",
+          "color": "#FFD700",
+          "align": "center"
+        },
+        {
+          "id": "menu_image",
+          "type": "image",
+          "alt": "Elegant food and drink spread",
+          "src": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445"
+        },
+        {
+          "id": "menu_list",
+          "type": "list",
+          "items": [
+            {
+              "id": "item1",
+              "title": "Bottle Service",
+              "description": "Premium spirits & mixers",
+              "src": "https://img.icons8.com/luxury/bottle"
+            },
+            {
+              "id": "item2",
+              "title": "Snack Platters",
+              "description": "Asian fusion appetizers",
+              "src": "https://img.icons8.com/luxury/food"
+            },
+            {
+              "id": "item3",
+              "title": "Hot Pot Sets",
+              "description": "Perfect for sharing",
+              "src": "https://img.icons8.com/luxury/hotpot"
+            }
+          ]
+        },
+        {
+          "id": "menu_button",
+          "type": "button",
+          "text": "View Full Menu",
+          "color": "white",
+          "bgColor": "#FFD700"
+        }
+      ]
+    },
+    {
+      "id": "packages_page",
+      "blocks": [
+        {
+          "id": "packages_header",
+          "type": "text",
+          "text": "Special Packages",
+          "color": "#FFD700",
+          "align": "center"
+        },
+        {
+          "id": "packages_list",
+          "type": "list",
+          "items": [
+            {
+              "id": "package1",
+              "title": "Birthday Package",
+              "description": "Room + cake + decorations",
+              "src": "https://img.icons8.com/luxury/cake"
+            },
+            {
+              "id": "package2",
+              "title": "Corporate Package",
+              "description": "Team building made fun",
+              "src": "https://img.icons8.com/luxury/business"
+            },
+            {
+              "id": "package3",
+              "title": "VIP Package",
+              "description": "Premium bottle service included",
+              "src": "https://img.icons8.com/luxury/vip"
+            }
+          ]
+        },
+        {
+          "id": "happy_hour",
+          "type": "text",
+          "text": "Ask about our special Happy Hour rates (Mon-Thu, 2PM-6PM)",
+          "color": "#E6B8FF",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "id": "song_library",
+      "blocks": [
+        {
+          "id": "library_header",
+          "type": "text",
+          "text": "Extensive Song Collection",
+          "color": "#FFD700",
+          "align": "center"
+        },
+        {
+          "id": "library_list",
+          "type": "list",
+          "items": [
+            {
+              "id": "songs1",
+              "title": "Chinese Hits",
+              "description": "Mandarin & Cantonese classics",
+              "src": "https://img.icons8.com/music/chinese"
+            },
+            {
+              "id": "songs2",
+              "title": "K-Pop Favorites",
+              "description": "Latest Korean hits",
+              "src": "https://img.icons8.com/music/kpop"
+            },
+            {
+              "id": "songs3",
+              "title": "English Songs",
+              "description": "Pop, Rock, R&B & more",
+              "src": "https://img.icons8.com/music/english"
+            },
+            {
+              "id": "songs4",
+              "title": "J-Pop Collection",
+              "description": "Japanese hits & anime songs",
+              "src": "https://img.icons8.com/music/jpop"
+            }
+          ]
+        },
+        {
+          "id": "update_text",
+          "type": "text",
+          "text": "New songs added weekly!",
+          "color": "#E6B8FF",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "id": "booking_page",
+      "blocks": [
+        {
+          "id": "booking_header",
+          "type": "text",
+          "text": "Reserve Your Room",
+          "color": "#FFD700",
+          "align": "center"
+        },
+        {
+          "id": "booking_image",
+          "type": "image",
+          "alt": "Luxurious KTV room interior",
+          "src": "https://images.unsplash.com/photo-1581850518616-bcb8077a2336"
+        },
+        {
+          "id": "hours_text",
+          "type": "text",
+          "text": "Open Daily 2PM - 3AM",
+          "color": "#E6B8FF",
+          "align": "center"
+        },
+        {
+          "id": "contact_list",
+          "type": "list",
+          "items": [
+            {
+              "id": "contact1",
+              "title": "WeChat Booking",
+              "description": "Scan QR code to book",
+              "src": "https://img.icons8.com/luxury/wechat"
+            },
+            {
+              "id": "contact2",
+              "title": "Phone Reservation",
+              "description": "Priority booking line",
+              "src": "https://img.icons8.com/luxury/phone"
+            }
+          ]
+        },
+        {
+          "id": "reserve_button",
+          "type": "button",
+          "text": "Book Now",
+          "color": "white",
+          "bgColor": "#FFD700"
+        }
+      ]
+    }
+  ]
+}

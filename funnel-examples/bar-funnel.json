@@ -1,0 +1,173 @@
+{
+  "name": "Neon Nights Bar & Lounge",
+  "bgColor": "#1A1A1A",
+  "pages": [
+    {
+      "id": "welcome_page",
+      "blocks": [
+        {
+          "id": "header_text",
+          "type": "text",
+          "text": "Welcome to Neon Nights",
+          "color": "#FF00FF",
+          "align": "center"
+        },
+        {
+          "id": "hero_image",
+          "type": "image",
+          "alt": "Stylish bar interior",
+          "src": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34"
+        },
+        {
+          "id": "tagline",
+          "type": "text",
+          "text": "Where Every Night is Extraordinary",
+          "color": "#00FFFF",
+          "align": "center"
+        },
+        {
+          "id": "cta_button",
+          "type": "button",
+          "text": "Explore Our World",
+          "color": "white",
+          "bgColor": "#FF00FF"
+        }
+      ]
+    },
+    {
+      "id": "signature_drinks",
+      "blocks": [
+        {
+          "id": "drinks_header",
+          "type": "text",
+          "text": "Signature Cocktails",
+          "color": "#00FFFF",
+          "align": "center"
+        },
+        {
+          "id": "cocktails_list",
+          "type": "list",
+          "items": [
+            {
+              "id": "drink1",
+              "title": "Neon Dream",
+              "description": "Vodka, blue curacao, lime",
+              "src": "https://img.icons8.com/neon/cocktail"
+            },
+            {
+              "id": "drink2",
+              "title": "Electric Kiss",
+              "description": "Gin, elderflower, prosecco",
+              "src": "https://img.icons8.com/neon/martini"
+            },
+            {
+              "id": "drink3",
+              "title": "Purple Rain",
+              "description": "Tequila, lavender, blackberry",
+              "src": "https://img.icons8.com/neon/wine"
+            }
+          ]
+        },
+        {
+          "id": "menu_button",
+          "type": "button",
+          "text": "Full Menu",
+          "color": "white",
+          "bgColor": "#00FFFF"
+        }
+      ]
+    },
+    {
+      "id": "events_page",
+      "blocks": [
+        {
+          "id": "events_image",
+          "type": "image",
+          "alt": "Live DJ performance",
+          "src": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7"
+        },
+        {
+          "id": "events_list",
+          "type": "list",
+          "items": [
+            {
+              "id": "event1",
+              "title": "Ladies Night",
+              "description": "Every Thursday",
+              "src": "https://img.icons8.com/neon/calendar"
+            },
+            {
+              "id": "event2",
+              "title": "Live DJs",
+              "description": "Friday & Saturday",
+              "src": "https://img.icons8.com/neon/music"
+            },
+            {
+              "id": "event3",
+              "title": "Happy Hour",
+              "description": "Mon-Fri, 5-7pm",
+              "src": "https://img.icons8.com/neon/clock"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vip_page",
+      "blocks": [
+        {
+          "id": "vip_text",
+          "type": "text",
+          "text": "VIP Experience",
+          "color": "#FF00FF",
+          "align": "center"
+        },
+        {
+          "id": "vip_image",
+          "type": "image",
+          "alt": "VIP lounge area",
+          "src": "https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2"
+        },
+        {
+          "id": "vip_description",
+          "type": "text",
+          "text": "Private booths, exclusive service, premium spirits",
+          "color": "#FFFFFF",
+          "align": "center"
+        },
+        {
+          "id": "reserve_button",
+          "type": "button",
+          "text": "Reserve Now",
+          "color": "white",
+          "bgColor": "#FF00FF"
+        }
+      ]
+    },
+    {
+      "id": "contact_page",
+      "blocks": [
+        {
+          "id": "contact_header",
+          "type": "text",
+          "text": "Find Us Tonight",
+          "color": "#00FFFF",
+          "align": "center"
+        },
+        {
+          "id": "location_image",
+          "type": "image",
+          "alt": "Bar exterior at night",
+          "src": "https://images.unsplash.com/photo-1514933651103-005eec06c04b"
+        },
+        {
+          "id": "contact_button",
+          "type": "button",
+          "text": "Get Directions",
+          "color": "white",
+          "bgColor": "#00FFFF"
+        }
+      ]
+    }
+  ]
+}

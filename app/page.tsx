@@ -1,13 +1,12 @@
 "use client";
 
 import { FileUploader } from "@/components/FileUploader";
-import Image from "next/image";
 import { FunnelContext } from "@/lib/contexts";
 import { useState, useEffect } from "react";
 import { Funnel } from "@/types";
 import { Toaster } from "react-hot-toast";
 import FunnelPreview from "@/components/FunnelPreview";
-import perspectiveLogo from "../public/logo.png";
+import Header from "@/components/ui/Header";
 
 export default function Home() {
   const [funnel, setFunnel] = useState<Funnel | null>(null);
@@ -33,23 +32,7 @@ export default function Home() {
     <FunnelContext.Provider value={[funnel, setFunnel]}>
       <div className="grid grid-rows-[1fr_auto_1fr]  justify-items-center min-h-screen p-8 pb-20 gap-8 sm:p-20 font-[family-name:var(--font-inter)] bg-gray-50">
         <header className="justify-items-center">
-          <div className="animated-header">
-            <Image
-              src={perspectiveLogo}
-              alt="Perspective Logo"
-              className="header-logo"
-            />
-            <div className="header-title">
-              <div className="flex-grow">
-                <span className="ml-2 font-semibold text-slate-800">
-                  Funnel Viewer
-                </span>
-                <span className="ml-1 text-slate-500">by Perspective</span>
-              </div>
-              <a
-                href="https://github.com/danrocha/perspective-funnels"
-                className="ml-12 text-slate-500 hover:text-slate-800"
-                rel="noopener"
+        <Header />
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

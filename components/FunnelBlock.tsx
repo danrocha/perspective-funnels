@@ -7,7 +7,7 @@ export default function FunnelBlock({ block }: { block: Block }) {
       return (
         <p
           className={cl(
-            "mb-4 text-2xl font-bold",
+            "text-2xl font-bold",
             block.align === "center" && "text-center",
             block.align === "left" && "text-left",
             block.align === "right" && "text-right",
@@ -19,7 +19,7 @@ export default function FunnelBlock({ block }: { block: Block }) {
       );
     case "image":
       return (
-        <div className="mb-4 rounded-lg overflow-hidden">
+        <div className="rounded-lg overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={block.src}
@@ -44,9 +44,9 @@ export default function FunnelBlock({ block }: { block: Block }) {
 
     case "list":
       return (
-        <div className="grid grid-cols-1 gap-4 mb-4">
+        <ul className="grid grid-cols-1 gap-4">
           {block.items.map((item) => (
-            <div
+            <li
               key={item.id}
               className="flex items-center gap-4 p-4 bg-white rounded-xl shadow"
             >
@@ -56,9 +56,9 @@ export default function FunnelBlock({ block }: { block: Block }) {
                 <h3 className="font-semibold text-gray-900 ">{item.title}</h3>
                 <p className="text-sm text-gray-500">{item.description}</p>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       );
 
     default:

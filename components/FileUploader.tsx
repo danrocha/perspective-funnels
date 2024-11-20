@@ -1,6 +1,5 @@
 "use client";
-import { useCallback, useContext, useState } from "react";
-import toast from "react-hot-toast";
+import { useCallback, useContext, useState, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import { FunnelContext } from "@/lib/contexts";
 import PhoneFrame from "@/components/PhoneFrame";
@@ -9,6 +8,7 @@ import Loader from "@/components/ui/Loader";
 export default function FileUploader() {
   const [, setFunnel] = useContext(FunnelContext);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {
@@ -29,7 +29,7 @@ export default function FileUploader() {
           setFunnel(json);
           localStorage.setItem("funnel", text as string);
         } catch (error) {
-          toast.error(
+          setError(
             "Failed to parse the funnel file. Please check the file format.",
           );
           console.error(error);
@@ -38,7 +38,7 @@ export default function FileUploader() {
         }
       };
       reader.onerror = () => {
-        toast.error("Error reading the file.");
+        setError("Error reading the file.");
         setIsLoading(false);
       };
       reader.readAsText(file);
@@ -54,11 +54,16 @@ export default function FileUploader() {
     maxFiles: 1,
   });
 
+  useEffect(() => {
+    if (!isDragActive) return;
+    setError(null);
+  }, [isDragActive, setError]);
+
   return (
     <PhoneFrame>
       <div
         {...getRootProps()}
-        className={`w-full h-full flex items-center transition-colors justify-center ${isDragActive ? "bg-sky-500/50" : "bg-white"}`}
+        className={`relative w-full h-full flex items-center transition-colors justify-center ${isDragActive ? "bg-sky-500/50" : "bg-white"}`}
       >
         <input {...getInputProps()} id="file-upload" />
         {isLoading ? (
@@ -96,6 +101,25 @@ export default function FileUploader() {
               )}
             </div>
           </button>
+        )}
+        {error && (
+          <div className="absolute bottom-12 left-0 right-0 px-12 text-red-500/75 text-center text-sm">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-6 mx-auto mb-2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
+              />
+            </svg>
+            <p>{error}</p>
+          </div>
         )}
       </div>
     </PhoneFrame>

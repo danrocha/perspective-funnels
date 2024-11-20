@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Toaster } from "react-hot-toast";
 import FileUploader from "@/components/FileUploader";
 import FunnelPreview from "@/components/FunnelPreview";
 import Header from "@/components/ui/Header";
@@ -65,9 +64,7 @@ export default function Home() {
           </div>
         )}
       </div>
-      <footer>
-        <Toaster />
-      </footer>
+      <footer>{/* footer content? */}</footer>
     </div>
   );
 }

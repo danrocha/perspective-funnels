@@ -11,10 +11,10 @@ import { Funnel } from "@/types";
 export default function Home() {
   const [funnel, setFunnel] = useState<Funnel | null>(null);
 
-  // Check localStorage on mount
+  // Check for any funnel already on localStorage
   useEffect(() => {
     try {
-      const savedFunnel = localStorage.getItem("funnel");
+      const savedFunnel = localStorage?.getItem("funnel");
       if (savedFunnel) {
         setFunnel(JSON.parse(savedFunnel));
       }
@@ -25,7 +25,7 @@ export default function Home() {
 
   function handleClear() {
     setFunnel(null);
-    localStorage.removeItem("funnel");
+    if (localStorage) localStorage.removeItem("funnel");
   }
 
   return (

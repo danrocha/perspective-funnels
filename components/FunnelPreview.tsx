@@ -35,7 +35,7 @@ export default function FunnelPreview() {
         <button
           onClick={() => setCurrentPage((prev) => Math.max(0, prev - 1))}
           disabled={currentPage === 0}
-          className="px-4 -mx-4 disabled:text-slate-300"
+          className="px-4 -mx-4 disabled:opacity-0 text-slate-500 hover:text-slate-900 transition-colors"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ export default function FunnelPreview() {
             )
           }
           disabled={currentPage === funnel.pages.length - 1}
-          className="px-4 -mx-4 disabled:text-slate-300"
+          className="px-4 -mx-4 disabled:opacity-0 text-slate-500 hover:text-slate-900 transition-colors"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -1,19 +1,23 @@
 "use client";
-import { useCallback, useContext, useState } from "react";
+import { useCallback, useContext, useEffect } from "react";
 import { FunnelContext } from "@/lib/contexts";
 import { useDropzone } from "react-dropzone";
 import toast from "react-hot-toast";
 import PhoneFrame from "./PhoneFrame";
 
-export function FileUploader() {
-  const [fileName, setFileName] = useState("");
+export function FileUploader({
+  autoOpenFileInput,
+  onOpenFileInputDialog,
+}: {
+  autoOpenFileInput: boolean;
+  onOpenFileInputDialog: VoidFunction;
+}) {
   const [funnel, setFunnel] = useContext(FunnelContext);
 
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {
       const file = acceptedFiles[0];
       if (!file) return;
-      setFileName(file.name);
 
       const reader = new FileReader();
       reader.onload = async (event) => {
@@ -35,15 +39,23 @@ export function FileUploader() {
       };
       reader.readAsText(file);
     },
-    [setFunnel, setFileName],
+    [setFunnel],
   );
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+
+  const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
     onDrop,
     accept: {
       "application/json": [".json"],
     },
     maxFiles: 1,
   });
+
+  useEffect(() => {
+    if (autoOpenFileInput) {
+      open();
+      onOpenFileInputDialog();
+    }
+  }, [autoOpenFileInput, open, onOpenFileInputDialog]); // Empty dependency array to only run on mount
 
   return (
     <PhoneFrame>

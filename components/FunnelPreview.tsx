@@ -4,9 +4,10 @@ import { FunnelContext } from "@/lib/contexts";
 import FunnelBlock from "./FunnelBlock";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { useDragScroll } from "@/lib/hooks";
+import { cl, isLightColor } from "@/lib/utils";
 
 export default function FunnelPreview() {
-  const [funnel, setFunnel] = useContext(FunnelContext);
+  const [funnel] = useContext(FunnelContext);
   const [currentPage, setCurrentPage] = useState(0);
   const [isOverflowing, setIsOverflowing] = useState(false);
   const contentRef = useRef(null);
@@ -35,6 +36,7 @@ export default function FunnelPreview() {
   return (
     <div className="flex flex-col items-center">
       <div className="flex gap-4">
+        {/* button prev */}
         <button
           onClick={() => setCurrentPage((prev) => Math.max(0, prev - 1))}
           disabled={currentPage === 0}
@@ -58,9 +60,11 @@ export default function FunnelPreview() {
         <PhoneFrame bgColor={funnel.bgColor}>
           <div
             ref={contentRef}
-            className={`w-full h-full pl-4 pt-12 mt-12 pb-24 font-[family-name:var(--font-nunito)] overflow-y-auto ${
-              isOverflowing ? "" : "pr-4"
-            }`}
+            className={cl([
+              "w-full h-full pl-4 pt-20 pb-24 font-[family-name:var(--font-nunito)] overflow-y-auto",
+              `${isOverflowing ? "-pr-4" : "pr-4"}`,
+              `${isLightColor(funnel.bgColor) ? "scrollbar-light" : "scrollbar-dark"}`,
+            ])}
             style={{ backgroundColor: funnel.bgColor || "white" }}
           >
             <div
@@ -73,6 +77,7 @@ export default function FunnelPreview() {
             </div>
           </div>
         </PhoneFrame>
+        {/* button next */}
         <button
           onClick={() =>
             setCurrentPage((prev) =>

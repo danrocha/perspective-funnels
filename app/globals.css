@@ -9,7 +9,7 @@
     --perspective-red: #fb2d2a;
 }
 
-/* For WebKit browsers */
+/* Base scrollbar styles */
 ::-webkit-scrollbar {
     width: 3px;
     height: 3px;
@@ -28,18 +28,37 @@
     background: #555;
 }
 
-/* For Firefox */
+.scrollbar-light::-webkit-scrollbar-thumb {
+    background: rgba(200, 200, 200, 0.5);
+}
+
+.scrollbar-light::-webkit-scrollbar-thumb:hover {
+    background: rgba(150, 150, 150, 0.7);
+}
+
+.scrollbar-dark::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.scrollbar-dark::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Firefox */
 body {
     scrollbar-width: thin;
     scrollbar-color: #c8c8c8 transparent;
 }
 
-/* linear-gradient( 45deg,#00AAFF 50%,#0000 0),
-    linear-gradient(-45deg,#F1BBBB 50%,#0000 0),
-    linear-gradient( 45deg,#0000 50%,#AA00FF 0),
-    linear-gradient(-45deg,#0000 50%,#FF00AA 0),
-    #00AAFF; */
+.scrollbar-light {
+    scrollbar-color: rgba(200, 200, 200, 0.5) transparent;
+}
 
+.scrollbar-dark {
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+/* Animated loader */
 .loader {
     width: 30px;
     aspect-ratio: 1;
@@ -95,6 +114,7 @@ body {
     }
 }
 
+/* Drag to scroll cursors */
 .grab-cursor {
     cursor:
         url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%23444444" fill-opacity="0.5" stroke="white" stroke-width="2"/></svg>')

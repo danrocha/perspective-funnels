@@ -3,6 +3,7 @@ import PhoneFrame from "./PhoneFrame";
 import { FunnelContext } from "@/lib/contexts";
 import FunnelBlock from "./FunnelBlock";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
+import { useDragScroll } from "@/lib/hooks";
 
 export default function FunnelPreview() {
   const [funnel, setFunnel] = useContext(FunnelContext);
@@ -10,6 +11,8 @@ export default function FunnelPreview() {
   const [isOverflowing, setIsOverflowing] = useState(false);
   const contentRef = useRef(null);
   const [blocks] = useAutoAnimate();
+
+  useDragScroll(contentRef);
 
   useEffect(() => {
     const checkOverflow = () => {
@@ -60,7 +63,10 @@ export default function FunnelPreview() {
             }`}
             style={{ backgroundColor: funnel.bgColor || "white" }}
           >
-            <div className="space-y-8" ref={blocks}>
+            <div
+              className="space-y-8 pointer-events-none select-none"
+              ref={blocks}
+            >
               {page.blocks.map((block) => (
                 <FunnelBlock key={block.id} block={block} />
               ))}

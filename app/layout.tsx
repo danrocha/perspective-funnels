@@ -16,7 +16,8 @@ const nunito = localFont({
 
 export const metadata: Metadata = {
   title: "Funnel Previews",
-  description: "by Perspective",
+  description:
+    "Funnel Previews by Perspective: Visualize your funnels on a mobile viewport!",
 };
 
 export default function RootLayout({

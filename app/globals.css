@@ -128,3 +128,48 @@ body {
             12 12,
         grabbing;
 }
+
+.animated-header {
+    height: 2rem;
+    width: 428px;
+    position: relative;
+}
+
+.header-logo {
+    height: 1.5rem;
+    width: 1.5rem;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    transition:
+        transform 0.3s ease,
+        left 0.3s ease;
+}
+
+.header-title {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    opacity: 0;
+    padding-left: 2rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(-20%);
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+    user-select: none;
+    width: 100%;
+}
+
+.animated-header:hover .header-logo {
+    left: 0;
+    transform: translateX(0);
+}
+
+.animated-header:hover .header-title {
+    opacity: 1;
+    transform: translateX(0);
+}

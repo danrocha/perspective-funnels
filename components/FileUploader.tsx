@@ -4,6 +4,7 @@ import { FunnelContext } from "@/lib/contexts";
 import { useDropzone } from "react-dropzone";
 import toast from "react-hot-toast";
 import PhoneFrame from "./PhoneFrame";
+import Loader from "@/components/ui/Loader";
 
 export function FileUploader() {
   const [, setFunnel] = useContext(FunnelContext);
@@ -61,10 +62,7 @@ export function FileUploader() {
       >
         <input {...getInputProps()} id="file-upload" />
         {isLoading ? (
-          <div className="text-center">
-            <div className="loader mx-auto"></div>
-            <p className="mt-4 text-sm text-gray-600">Loading funnel...</p>
-          </div>
+          <Loader />
         ) : (
           <button className="text-center min-h-1/2 grid grid-cols-1 grid-rows-2 gap-4 hover:brightness-75">
             <svg

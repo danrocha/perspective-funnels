@@ -10,6 +10,7 @@ export default function FunnelPreview() {
   const [funnel] = useContext(FunnelContext);
   const [currentPage, setCurrentPage] = useState(0);
   const [isOverflowing, setIsOverflowing] = useState(false);
+  const [isBackgroundLight, setIsBackgroundLight] = useState(true);
   const contentRef = useRef(null);
   const [blocks] = useAutoAnimate();
 
@@ -28,11 +29,18 @@ export default function FunnelPreview() {
     return () => window.removeEventListener("resize", checkOverflow);
   }, [funnel, currentPage]);
 
+  useEffect(() => {
+    if (funnel?.bgColor) {
+      setIsBackgroundLight(isLightColor(funnel.bgColor));
+    }
+  }, [funnel, setIsBackgroundLight]);
+
   if (!funnel) {
     return;
   }
 
   const page = funnel.pages[currentPage];
+
   return (
     <div className="flex flex-col items-center">
       <div className="flex gap-4">
@@ -63,18 +71,29 @@ export default function FunnelPreview() {
             className={cl([
               "w-full h-full pl-4 pt-20 pb-24 font-[family-name:var(--font-nunito)] overflow-y-auto",
               `${isOverflowing ? "-pr-4" : "pr-4"}`,
-              `${isLightColor(funnel.bgColor) ? "scrollbar-light" : "scrollbar-dark"}`,
+              `${isBackgroundLight ? "scrollbar-light" : "scrollbar-dark"}`,
             ])}
             style={{ backgroundColor: funnel.bgColor || "white" }}
           >
-            <div
-              className="space-y-8 pointer-events-none select-none"
-              ref={blocks}
-            >
-              {page.blocks.map((block) => (
-                <FunnelBlock key={block.id} block={block} />
-              ))}
-            </div>
+            {page.blocks.length ? (
+              <div
+                className="space-y-8 pointer-events-none select-none"
+                ref={blocks}
+              >
+                {page.blocks.map((block) => (
+                  <FunnelBlock key={block.id} block={block} />
+                ))}
+              </div>
+            ) : (
+              <div
+                className={cl([
+                  "flex items-center justify-center h-full",
+                  `${isBackgroundLight ? "text-slate-900" : "text-white"}`,
+                ])}
+              >
+                Ops, this page has no content!
+              </div>
+            )}
           </div>
         </PhoneFrame>
         {/* button next */}

@@ -1,12 +1,16 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, MutableRefObject } from "react";
 
-export const useDragScroll = (nodeRef) => {
+export const useDragScroll = (
+  nodeRef: MutableRefObject<null | HTMLElement>,
+) => {
   const [node, setNode] = useState<HTMLElement | null>(null);
+
   useEffect(() => {
     if (nodeRef.current) {
       setNode(nodeRef.current);
     }
   }, [nodeRef, setNode]);
+
   const handleMouseDown = useCallback(
     (event: MouseEvent) => {
       if (!node) {

@@ -1,12 +1,12 @@
 "use client";
 
-import { FileUploader } from "@/components/FileUploader";
-import { FunnelContext } from "@/lib/contexts";
 import { useState, useEffect } from "react";
-import { Funnel } from "@/types";
 import { Toaster } from "react-hot-toast";
+import FileUploader from "@/components/FileUploader";
 import FunnelPreview from "@/components/FunnelPreview";
 import Header from "@/components/ui/Header";
+import { FunnelContext } from "@/lib/contexts";
+import { Funnel } from "@/types";
 
 export default function Home() {
   const [funnel, setFunnel] = useState<Funnel | null>(null);

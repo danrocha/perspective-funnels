@@ -1,12 +1,12 @@
 "use client";
 import { useCallback, useContext, useState } from "react";
-import { FunnelContext } from "@/lib/contexts";
-import { useDropzone } from "react-dropzone";
 import toast from "react-hot-toast";
-import PhoneFrame from "./PhoneFrame";
+import { useDropzone } from "react-dropzone";
+import { FunnelContext } from "@/lib/contexts";
+import PhoneFrame from "@/components/PhoneFrame";
 import Loader from "@/components/ui/Loader";
 
-export function FileUploader() {
+export default function FileUploader() {
   const [, setFunnel] = useContext(FunnelContext);
   const [isLoading, setIsLoading] = useState(false);
 

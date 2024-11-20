@@ -1,10 +1,9 @@
 import { useContext, useState, useRef, useEffect } from "react";
 import PhoneFrame from "./PhoneFrame";
 import { FunnelContext } from "@/lib/contexts";
-import FunnelBlock from "./FunnelBlock";
-import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { useDragScroll } from "@/lib/hooks";
 import { cl, isLightColor } from "@/lib/utils";
+import FunnelPage from "@/components/FunnelPage";
 
 export default function FunnelPreview() {
   const [funnel] = useContext(FunnelContext);
@@ -12,7 +11,6 @@ export default function FunnelPreview() {
   const [isOverflowing, setIsOverflowing] = useState(false);
   const [isBackgroundLight, setIsBackgroundLight] = useState(true);
   const contentRef = useRef(null);
-  const [blocks] = useAutoAnimate();
 
   useDragScroll(contentRef);
 
@@ -75,25 +73,7 @@ export default function FunnelPreview() {
             ])}
             style={{ backgroundColor: funnel.bgColor || "white" }}
           >
-            {page.blocks.length ? (
-              <div
-                className="space-y-8 pointer-events-none select-none"
-                ref={blocks}
-              >
-                {page.blocks.map((block) => (
-                  <FunnelBlock key={block.id} block={block} />
-                ))}
-              </div>
-            ) : (
-              <div
-                className={cl([
-                  "flex items-center justify-center h-full",
-                  `${isBackgroundLight ? "text-slate-900" : "text-white"}`,
-                ])}
-              >
-                Ops, this page has no content!
-              </div>
-            )}
+            <FunnelPage page={page} isBackgroundLight={isBackgroundLight} />
           </div>
         </PhoneFrame>
         {/* button next */}
@@ -103,7 +83,9 @@ export default function FunnelPreview() {
               Math.min(funnel.pages.length - 1, prev + 1),
             )
           }
-          disabled={currentPage === funnel.pages.length - 1}
+          disabled={
+            !funnel.pages.length || currentPage === funnel.pages.length - 1
+          }
           className="px-4 -mx-4 disabled:opacity-0 text-slate-500 hover:text-slate-900 transition-colors"
         >
           <svg

@@ -36,7 +36,7 @@ type ButtonBlock = {
 
 export type Block = TextBlock | ImageBlock | ListBlock | ButtonBlock;
 
-type FunnelPage = {
+export type FunnelPage = {
   id: string;
   blocks: Block[];
 };
